@@ -20,7 +20,8 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-  #displayName: Build
+    tasks: 'build'
+      displayName: Build
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'SonarCloud'
@@ -28,4 +29,3 @@ steps:
     projectKey: 'mostwanted001_microservicio-spring'
     projectName: 'microservicio-spring'
   displayName: 'SonarCloud Prepare'
-    tasks: 'build'
