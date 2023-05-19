@@ -21,11 +21,14 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
-      displayName: Build
-- task: SonarCloudPrepare@1
+    
+- task: Gradle@3
+  displayName: 'Run test'
   inputs:
-    SonarCloud: 'SonarCloud'
-    organization: 'mostwanted001'
-    projectKey: 'mostwanted001_microservicio-spring'
-    projectName: 'microservicio-spring'
-  displayName: 'SonarCloud Prepare'
+    gradleWrapperFile: 'gradlew'
+    workingDirectory: '$(Build.SourcesDirectory)'
+    publishJUnitResults: true
+    testResultsFiles: '*/TEST-.xml'
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: false
+    spotBugsAnalysis: false
