@@ -22,7 +22,7 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
     
-- task: Gradle@3
+- task: Gradle@2
   displayName: 'Run test'
   inputs:
     gradleWrapperFile: 'gradlew'
