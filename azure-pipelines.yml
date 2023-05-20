@@ -45,12 +45,12 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker'
-    repository: 'pruebajoaquin/repo-laboratorio-final'
+    repository: 'pruebajoaquin/laboratoriofinal'
     command: 'build'
     Dockerfile: '**/Dockerfile'
 
 - task: Docker@2
   inputs:
     containerRegistry: 'Docker'
-    repository: 'pruebajoaquin/repo-laboratorio-final'
+    repository: 'pruebajoaquin/laboratoriofinal'
     command: 'push'
