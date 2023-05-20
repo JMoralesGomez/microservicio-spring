@@ -17,18 +17,6 @@ steps:
     spotBugsAnalysis: false
   displayName: Build
 
-#- task: Gradle@2
-# inputs:
-#    workingDirectory: ''
-#    gradleWrapperFile: 'gradlew'
-#    gradleOptions: '-Xmx3072m'
-#    javaHomeOption: 'JDKVersion'
-#    jdkVersionOption: '1.8'
-#    jdkArchitectureOption: 'x64'
-#    publishJUnitResults: true
-#    testResultsFiles: '**/TEST-*.xml'
-#    tasks: 'build'
-
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'SonaCloud'
