@@ -59,7 +59,7 @@ steps:
     containerRegistry: 'Docker-LaboratorioFinal'
     repository: 'pruebajoaquin/repo-laboratorio-final'
     command: 'build'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: 'Dockerfile'
 
 - task: Docker@2
   inputs:
