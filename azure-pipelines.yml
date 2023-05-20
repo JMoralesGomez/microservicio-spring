@@ -3,19 +3,31 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  displayName: Build
 
 steps:
-- task: Gradle@2
+- task: Gradle@3
   inputs:
-    workingDirectory: ''
     gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
+    tasks: 'build'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-    tasks: 'build'
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: false
+    spotBugsAnalysis: false
+  displayName: Build
+
+#- task: Gradle@2
+# inputs:
+#    workingDirectory: ''
+#    gradleWrapperFile: 'gradlew'
+#    gradleOptions: '-Xmx3072m'
+#    javaHomeOption: 'JDKVersion'
+#    jdkVersionOption: '1.8'
+#    jdkArchitectureOption: 'x64'
+#    publishJUnitResults: true
+#    testResultsFiles: '**/TEST-*.xml'
+#    tasks: 'build'
 
 - task: SonarCloudPrepare@1
   inputs:
@@ -35,6 +47,7 @@ steps:
     sqGradlePluginVersionChoice: 'specify'
     sonarQubeGradlePluginVersion: '3.3'
     spotBugsAnalysis: false
+
 
 - task: Docker@2
   inputs:
