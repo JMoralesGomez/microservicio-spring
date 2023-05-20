@@ -51,18 +51,18 @@ steps:
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'Docker-LaboratorioFinal'
+    containerRegistry: 'Docker'
     command: 'login'
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'Docker-LaboratorioFinal'
+    containerRegistry: 'Docker'
     repository: 'pruebajoaquin/repo-laboratorio-final'
     command: 'build'
     Dockerfile: '**/Dockerfile'
 
 - task: Docker@2
   inputs:
-    containerRegistry: 'Docker-LaboratorioFinal'
+    containerRegistry: 'Docker'
     repository: 'pruebajoaquin/repo-laboratorio-final'
     command: 'push'
