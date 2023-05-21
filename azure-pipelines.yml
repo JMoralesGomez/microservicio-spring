@@ -54,3 +54,5 @@ steps:
     containerRegistry: 'Docker'
     repository: 'pruebajoaquin/laboratoriofinal'
     command: 'push'
+
+- script: 'jmeter -n -t \jmeter\test\PerformanceTesting.jmx -l \jmeter\result\results.jtl'
