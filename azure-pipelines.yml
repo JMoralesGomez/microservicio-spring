@@ -55,6 +55,14 @@ steps:
 #    repository: 'pruebajoaquin/laboratoriofinal'
 #    command: 'push'
 
+- task: Kubernetes@1
+  inputs:
+    connectionType: 'Kubernetes Service Connection'
+    command: 'create'
+    arguments: 'deployment final --image=pruebajoaquin/laboratoriofinal'
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Azure Container Registry'
+
 - script: 'jmeter -n -t pruebas.jmx -l results.jtl'
 
 - script: |
