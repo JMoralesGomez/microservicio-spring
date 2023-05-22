@@ -37,23 +37,23 @@ steps:
 #    spotBugsAnalysis: false
 
 
-#- task: Docker@2
-#  inputs:
-#    containerRegistry: 'Docker'
-#    command: 'login'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker'
+    command: 'login'
 
-#- task: Docker@2
-#  inputs:
-#    containerRegistry: 'Docker'
-#    repository: 'pruebajoaquin/laboratoriofinal'
-#    command: 'build'
-#    Dockerfile: '**/Dockerfile'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker'
+    repository: 'pruebajoaquin/laboratoriofinal'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
 
-#- task: Docker@2
-#  inputs:
-#    containerRegistry: 'Docker'
-#    repository: 'pruebajoaquin/laboratoriofinal'
-#    command: 'push'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker'
+    repository: 'pruebajoaquin/laboratoriofinal'
+    command: 'push'
 
 - task: Kubernetes@1
   inputs:
@@ -62,7 +62,6 @@ steps:
     arguments: '-f deployment app.yaml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
-
 
 - script: kubectl port-forward deploy/Test-deployment 8086:8085
 
