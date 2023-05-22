@@ -57,7 +57,7 @@ steps:
 
 - script: 'jmeter -n -t pruebas.jmx -l results.jtl'
 
-- script: 
+- script: |
     echo Aprobaste el Curso
   displayName: 'Aprobaste el Curso'
 
