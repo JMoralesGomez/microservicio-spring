@@ -55,6 +55,6 @@ steps:
     repository: 'pruebajoaquin/laboratoriofinal'
     command: 'push'
 
-- script: 'jmeter -n -t pruebas.jmx -l \jmeter\result\results.jtl'
+- script: 'jmeter -n -t pruebas.jmx -l results.jtl'
 
 
