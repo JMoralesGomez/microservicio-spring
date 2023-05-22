@@ -57,11 +57,14 @@ steps:
 
 - task: Kubernetes@1
   inputs:
-    connectionType: 'Kubernetes Service Connection'
-    command: 'create'
-    arguments: 'deployment final --image=pruebajoaquin/laboratoriofinal'
+    connectionType: 'None'
+    command: 'apply'
+    arguments: '-f deployment app.yaml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Azure Container Registry'
+
+
+- script: kubectl port-forward deploy/Test-deployment 8086:8085
 
 - script: 'jmeter -n -t pruebas.jmx -l results.jtl'
 
