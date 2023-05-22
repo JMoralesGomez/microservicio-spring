@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: petclinic-deployment
+  name: laboratorio-deployment
   labels:
     app: pet-clinic
 spec:
